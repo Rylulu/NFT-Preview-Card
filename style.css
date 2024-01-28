@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Mainbg: hsl(217, 54%, 11%);
+  --Cardbg: hsl(216, 50%, 16%);
+  --Hrcolor: hsl(215, 32%, 27%);
+  --Textcolor: hsl(0, 0%, 100%);
+  --Etrcolor: hsl(178, 100%, 50%);
+  --AccentColor: hsl(215, 51%, 70%);
+}
+
+html {
+  background-color: var(--Mainbg);
+  font-size: 18px;
+  font-family: "Outfit", sans-serif;
+  min-height: 95vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 95vh;
+}
+
+.wrapper {
+  width: 360px;
+}
+
+.container {
+  background-color: var(--Cardbg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 1rem 2rem 2rem rgba(8, 19, 35, 0.673);
+}
+
+.overlay {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.overlay::before {
+  position: absolute;
+  content: url(images/icon-view.svg);
+  top: 0;
+  left: 0;
+  background-color: hsla(178, 100%, 50%, 0.447);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay:hover::before {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.headimg {
+  display: block;
+  width: 100%;
+}
+
+h1,
+.value {
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 1.4rem;
+  color: var(--Textcolor);
+}
+
+h1:hover,
+span:hover {
+  color: var(--Etrcolor);
+  cursor: pointer;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  text-indent: 0.5rem;
+}
+
+.amount {
+  color: var(--Etrcolor);
+}
+
+.clock {
+  margin-left: auto;
+}
+
+.description,
+.time,
+.creator {
+  color: var(--AccentColor);
+}
+
+hr {
+  border: 1px solid var(--Hrcolor);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.imgcreator {
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--Textcolor);
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+span {
+  color: var(--Textcolor);
+}
+
+footer {
+  text-align: center;
+  color: var(--AccentColor);
+}
+
+footer a {
+  color: var(--Etrcolor);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  html {
+    font-size: 1.2em;
+  }
+  .wrapper {
+    width: 90vw;
+  }
+}
